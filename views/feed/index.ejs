@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feed List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/feed/create">Create Feed</a></h3>
+      <h1>Feed List</h1>
+      <% if(feed.length>0) { %>
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>Feed Name</th>
+            <th>Description</th>
+            <th>link</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<feed.length;i++) { %>
+            <tr>
+              <td><a href="/feed/show/<%= feed[i]._id%>"><%= feed[i].name%></a></td>
+              <td><%= feed[i].description%></td>
+	      <td><%= feed[i].link%></td>
+	       <td><%= feed[i].price%></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No feed found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>
