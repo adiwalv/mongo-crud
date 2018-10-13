@@ -59,49 +59,46 @@
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           
+          <a href="/feed" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+            <i class="material-icons" role="presentation">home</i>
+            <span class="visuallyhidden">Home</span>
+          </a>
         </div>
       </header>
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
-             
-		<div class="mdl-card__supporting-text">
-                 <h3>Feed Detail</h3><h5>
-      <table>
-        <tbody>
-          <tr>
-            <td>Name</td>
-            <td>:</td>
-            <td><%= feed.name %></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-            <td>:</td>
-            <td><%= feed.description %></td>
-          </tr>
-          <tr>
-            <td>Link</td>
-            <td>:</td>
-            <td><%= feed.link %></td>
-          </tr>
-          <tr>
-            <td>Price</td>
-            <td>:</td>
-            <td>Rs.<%= feed.price %></td>
-          </tr>
-        </tbody>
-      </table></h5><br><br>
-      <form action="/feed/delete/<%= feed._id%>" method="post">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
-                                  Delete
-                                </button>
-				<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" href="/feed/edit/<%= feed._id%>">EDIT</a>
-
-      </form>
-              </div>   
-             
-
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h3 class="mdl-cell mdl-cell--12-col">Details</h3>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>
+		    Name : <%= feed.name %>
+		  </h5>
+		  <h5>
+		    Description : <%= feed.description %>
+		  </h5>
+		  <h5>
+		    Link : <%= feed.link %>
+		  </h5>
+		  <h5>
+		    Price : <%= feed.price %>
+		  </h5>
+               
+                </div>
+              </div>
+              <div class="mdl-card__actions">
+		<form action="/feed/delete/<%= feed._id%>" method="post">
+                  <button class="mdl-button mdl-button--accent" type="submit">
+                    Delete
+                  </button>
+		  <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" href="/feed/edit/<%= feed._id%>">EDIT</a>
+		</form>       
+              </div>
+	      
             </div>
           </section>
           <section class="section--footer">
@@ -120,7 +117,7 @@
         </footer>
       </main>
     </div>
-    <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/text-only/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
+    <a href="https://github.com/adiwalv/mongo-crud/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
     <script src="/js/flybutton.js"></script>
   </body>
 </html>
